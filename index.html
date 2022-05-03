@@ -17,7 +17,7 @@
     <section class="wrapper">
         <div class="left">
             <img src="phone.png" height="581.15px" alt="phone">
-            <img class="screen" height="538.84px" src="screen1.png" alt="phone-screen">
+            <img class="screen" id = "rotator" height="538.84px" src="screen1.png" alt="phone-screen">
         </div>
         <div class="right">
             <div class="panel login">
@@ -83,6 +83,29 @@
             </li>
         </ul>
     </footer>
+    
+     <script>
+        (function () {
+            var rotator = document.getElementById('rotator');
+                         
+            var delayInSeconds = 1;                           
+            
+            var images = ['1.png', '2.png', '3.png', '4.png'];
+
+        
+            var num = 0;
+            var changeImage = function () {
+                var len = images.length;
+                rotator.src = images[num++];
+                if (num == len) {
+                    num = 0;
+                }
+            };
+            setInterval(changeImage, delayInSeconds * 6000);
+           
+        })();
+    
+</script>
 </body>
 
 </html>
